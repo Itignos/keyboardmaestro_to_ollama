@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>keyboardmaestro_to_ollama</string>
+	<key>Script</key>
+	<string>Action.sh</string>
+	<key>Title</key>
+	<string>Ollama Generate with %Param%Model%</string>
+	<key>Results</key>
+	<string>Window|Variable|Clipboard</string>
+	<key>Parameters</key>
+	<array>
+		<dict>
+			<key>Label</key>
+			<string>Ollama URL</string>
+			<key>Type</key>
+			<string>String</string>
+			<key>Default</key>
+			<string>http://localhost:11434</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Model</string>
+			<key>Type</key>
+			<string>String</string>
+			<key>Default</key>
+			<string>llama3</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Prompt</string>
+			<key>Type</key>
+			<string>Text</string>
+			<key>Default</key>
+			<string>Summarize the following text:</string>
+		</dict>
+		<dict>
+			<key>Label</key>
+			<string>Input Text</string>
+			<key>Type</key>
+			<string>TokenText</string>
+			<key>Default</key>
+			<string>%SystemClipboard%</string>
+		</dict>
+	</array>
+</dict>
+</plist>
