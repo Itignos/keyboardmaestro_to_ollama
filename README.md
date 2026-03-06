@@ -1,9 +1,15 @@
 # Keyboard Maestro to Ollama Plugin
 
-A Keyboard Maestro Plugin to send text and a prompt to a local Ollama instance and use the response in your macros.
+A [Keyboard Maestro](https://www.keyboardmaestro.com/) Plugin to send text and a prompt to a local [Ollama](https://ollama.com/) instance and use the response in your macros.
+
+> **Note:** To use this plugin, you must have Ollama installed and running on your device. [Download Ollama for Mac here](https://ollama.com/download/mac).
 
 ## Installation
 
+**Option 1: Quick Install**
+Download the latest `keyboardmaestro_to_ollama.zip` from the repository and drag it onto the Keyboard Maestro Dock icon.
+
+**Option 2: Build from Source**
 1. Create the plugin archive by running `./build.sh`
 2. Drag `keyboardmaestro_to_ollama.zip` onto the Keyboard Maestro Dock icon.
 
@@ -39,7 +45,7 @@ ollama run translategemma:4b
    - Progress: `0`
 2. **Third Party Plugin Action**: `keyboardmaestro_to_ollama`
    - Ollama URL: `http://localhost:11434`
-   - Model: `translategemma:12b`
+   - Model: `translategemma:4b`
    - Prompt: `Translate the following text precisely into English (British English). Reply only with the translation itself. Do not add any introduction, any explanation, any variants, any quotation marks, or any other additional characters or words.`
    - Input Text: `%SystemClipboard%`
    - Save results to a clipboard: `System Clipboard`
@@ -51,4 +57,4 @@ ollama run translategemma:4b
 
 ![Example Translation Macro](translate_example.png)
 
-> **Note**: To make this example fully work visually on GitHub, ensure you upload your screenshot as `translate_example.png` to the root of this repository!
+
