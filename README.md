@@ -7,7 +7,7 @@ A [Keyboard Maestro](https://www.keyboardmaestro.com/) Plugin to send text and a
 ## Installation
 
 **Option 1: Quick Install**
-Download the latest `keyboardmaestro_to_ollama.zip` from the repository and drag it onto the Keyboard Maestro Dock icon.
+Download the [latest `keyboardmaestro_to_ollama.zip`](https://github.com/Itignos/keyboardmaestro_to_ollama/releases/latest/download/keyboardmaestro_to_ollama.zip) from the repository and drag it onto the Keyboard Maestro Dock icon.
 
 **Option 2: Build from Source**
 1. Create the plugin archive by running `./build.sh`
