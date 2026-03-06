@@ -18,3 +18,37 @@ In Keyboard Maestro, look for the action `keyboardmaestro_to_ollama` under "Thir
 - **Input Text**: The text to process. You can use standard Keyboard Maestro tokens here, such as `%SystemClipboard%` or `%Variable%MyText%`.
 
 The result of the generation is returned natively to Keyboard Maestro, allowing you to "Save to Variable", "Display in Window", or "Save to Clipboard".
+
+## Example: Translation Macro
+
+Here is an example of how to use the plugin with a local [TranslateGemma](https://ollama.com/library/translategemma) model on Ollama. The goal is to translate text on your device into English using a single keystroke (`⌃E` / `Ctrl-E`).
+
+**Prerequisite**:
+To make this example run, please be sure to download the model first. For example, you can pull the 4B parameter model by running in your terminal:
+```bash
+ollama run translategemma:4b
+```
+*(If you do not know which quantization to download: think how much memory you can allocate to this task. The "4b" version works quite well already. Higher parameter/quantization versions use more memory but are more precise.)*
+
+**Macro Setup: "General: translate into English"**
+- **Trigger**: Hot Key Trigger `⌃E` (Ctrl-E)
+
+**Actions**:
+1. **Display Progress**: 
+   - Title: `Please wait - AI is processing...`
+   - Progress: `0`
+2. **Third Party Plugin Action**: `keyboardmaestro_to_ollama`
+   - Ollama URL: `http://localhost:11434`
+   - Model: `translategemma:12b`
+   - Prompt: `Translate the following text precisely into English (British English). Reply only with the translation itself. Do not add any introduction, any explanation, any variants, any quotation marks, or any other additional characters or words.`
+   - Input Text: `%SystemClipboard%`
+   - Save results to a clipboard: `System Clipboard`
+3. **Insert Text by Pasting**:
+   - Text: `%SystemClipboard%`
+4. **Display Progress**: 
+   - Title: `Please wait - AI is processing...`
+   - Progress: `100`
+
+![Example Translation Macro](translate_example.png)
+
+> **Note**: To make this example fully work visually on GitHub, ensure you upload your screenshot as `translate_example.png` to the root of this repository!
