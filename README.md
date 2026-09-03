@@ -4,6 +4,10 @@ A [Keyboard Maestro](https://www.keyboardmaestro.com/) Plugin to send text and a
 
 > **Note:** To use this plugin, you must have Ollama installed and running on your device. [Download Ollama for Mac here](https://ollama.com/download/mac).
 
+## OpenAI-compatible endpoints and oMLX
+
+This plugin is intentionally for Ollama's native `/api/generate` API. For OpenAI-compatible endpoints such as [oMLX](https://omlx.ai/), LM Studio, llama.cpp server, vLLM, and hosted OpenAI-compatible services, use the sister project [keyboardmaestro_to_openai](https://github.com/Itignos/keyboardmaestro_to_openai). That repository also includes the separate `keyboardmaestro_to_omlx_translategemma` action for oMLX-hosted TranslateGemma models.
+
 ## Installation
 
 **Option 1: Quick Install**
@@ -24,6 +28,8 @@ In Keyboard Maestro, look for the action `keyboardmaestro_to_ollama` under "Thir
 - **Input Text**: The text to process. You can use standard Keyboard Maestro tokens here, such as `%SystemClipboard%` or `%Variable%MyText%`.
 
 The result of the generation is returned natively to Keyboard Maestro, allowing you to "Save to Variable", "Display in Window", or "Save to Clipboard".
+
+If Ollama rejects a request, returns invalid data, or cannot be reached, the plugin displays a native macOS error dialog with the underlying error message. This prevents Keyboard Maestro from silently hiding the script error.
 
 ## Example: Translation Macro
 
